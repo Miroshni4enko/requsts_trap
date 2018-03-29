@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180328185516) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "trap_urls", id: false, force: :cascade do |t|
     t.string "url"
     t.datetime "created_at", null: false
