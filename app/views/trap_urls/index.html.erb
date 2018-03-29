@@ -1,0 +1,13 @@
+<h1>Urls</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+  </tr>
+
+  <% @trap_urls.each do |trap_url| %>
+    <tr>
+      <td><%= trap_url.url %></td>
+    </tr>
+  <% end %>
+</table>

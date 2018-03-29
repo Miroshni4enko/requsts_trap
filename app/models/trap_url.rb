@@ -1,0 +1,2 @@
+class TrapUrl < ApplicationRecord
+end
