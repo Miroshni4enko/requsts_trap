@@ -1,14 +1,12 @@
-require 'set'
 class TrapUrlsController < ApplicationController
+
   def trap
     @hash_urls = Set.new
-    puts url_params
-    if @hash_urls.add?(url_params[:url])
-      puts 'new'
-      TrapUrl.create(url_params)
+    if TrapUrl.exists?(url_params[:url])
+      @hash_urls.add(url_params[:url])
     else
+      @hash_urls =  TrapUrl.create(url_params)
     end
-    @hash_urls
   end
 
   def index
@@ -19,6 +17,6 @@ class TrapUrlsController < ApplicationController
   private
 
   def url_params
-    { url: params.require(:url) }
+    params.permit(:url)
   end
 end
