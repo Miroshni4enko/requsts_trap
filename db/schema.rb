@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329174447) do
+ActiveRecord::Schema.define(version: 20180331132331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,4 +29,5 @@ ActiveRecord::Schema.define(version: 20180329174447) do
     t.index ["url"], name: "index_trap_urls_on_url", unique: true
   end
 
+  add_foreign_key "requests", "trap_urls", column: "url", primary_key: "url"
 end

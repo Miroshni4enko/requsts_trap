@@ -1,3 +1,3 @@
 class Request < ApplicationRecord
-  belongs_to :trap_url
+  belongs_to :trap_url, foreign_key: 'url'
 end

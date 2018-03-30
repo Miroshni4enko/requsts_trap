@@ -1,4 +1,4 @@
 class TrapUrl < ApplicationRecord
   self.primary_key = :url
-  has_many :requests, dependent: :destroy
+  has_many :requests, dependent: :destroy, foreign_key: 'url'
 end
