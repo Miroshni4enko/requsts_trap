@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post '/:url', to: 'trap_urls#trap'
   get '/:url', to: 'trap_urls#trap'
   patch '/:url', to: 'trap_urls#trap'
-  get '/:url/requests', to: 'trap_urls#index'
+  get '/requests/all', to: 'trap_urls#index'
+  get '/:url/requests', to: 'trap_urls#show'
 
 
 

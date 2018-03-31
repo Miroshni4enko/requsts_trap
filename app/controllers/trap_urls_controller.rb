@@ -1,5 +1,6 @@
 require 'json'
 class TrapUrlsController < ApplicationController
+  rescue_from  StandardError, with: :return_failed
   def trap
     @hash_urls = Set.new
 
@@ -8,12 +9,28 @@ class TrapUrlsController < ApplicationController
     else
       TrapUrl.create(url_params)
            end
-    @test = @url.requests.create(request_data: request_as_json)
+
+    trap_request = @url.requests.new(request_data: request_as_json)
+
+    if trap_request.save then
+      render json: {ok: true}, status: 200
+    else
+      render json: {ok: false}, status: 400
+    end
+
     @hash_urls.add @url.url
   end
 
   def index
     @trap_urls = TrapUrl.all
+  end
+
+  def show
+    @url_requests_attr = Set.new
+    url_requests = Request.where(url: url_params[:url])
+    url_requests.each do |request|
+      @url_requests_attr.add(request.attributes)
+    end
   end
 
   private
@@ -37,4 +54,10 @@ class TrapUrlsController < ApplicationController
       }
     )
   end
+
+  def return_failed(exception)
+    logger.error exception.message
+    render json: {success: false}, status: 500
+  end
+
 end
