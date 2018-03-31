@@ -12,10 +12,10 @@ class TrapUrlsController < ApplicationController
 
     trap_request = @url.requests.new(request_data: request_as_json)
 
-    if trap_request.save then
-      render json: {ok: true}, status: 200
-    else
-      render json: {ok: false}, status: 400
+    if trap_request.save
+    ActionCable.server.broadcast 'requests',
+                                  url: trap_request.url
+    head :ok
     end
 
     @hash_urls.add @url.url
