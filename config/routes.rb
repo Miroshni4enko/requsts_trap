@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/requests/all', to: 'trap_urls#index'
   get '/:url/requests', to: 'trap_urls#show'
 
-  mount ActionCable.server => '/:url/requests'
+  mount ActionCable.server => '/cable'
 
 
 

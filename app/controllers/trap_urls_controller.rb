@@ -28,9 +28,8 @@ class TrapUrlsController < ApplicationController
   def show
     @url_requests_attr = Set.new
     url_requests = Request.where(url: url_params[:url])
-    logger.info (:tuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu)
     url_requests.each do |request|
-      @url_requests_attr.add(request.url)
+      @url_requests_attr.add(request.attributes)
     end
   end
 
