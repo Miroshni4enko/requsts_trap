@@ -6,5 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: requests-trap_production
+  url: redis://redistogo:de05e65a53f4495ab802cfc48ee2d193@tarpon.redistogo.com:9492/

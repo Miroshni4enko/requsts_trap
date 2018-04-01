@@ -22,6 +22,11 @@ development:
 #  <<: *default
 #  database: db/test.postgresql
 
-#production:
-#  <<: *default
-#  database: db/production.postgresql
+production:
+  <<: *default
+  host: ec2-174-129-206-173.compute-1.amazonaws.com
+  database: d4nh35o1etmb53
+  username: zdczboutshgwkc
+  port: 5432
+  password: 6e5c271a55cb76965971084c0d0e040d45f221feee6b0aa25a7e2559adb42e3a
+

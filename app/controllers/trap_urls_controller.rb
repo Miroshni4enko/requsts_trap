@@ -1,6 +1,6 @@
 require 'json'
 class TrapUrlsController < ApplicationController
-  rescue_from  StandardError, with: :return_failed
+  rescue_from StandardError, with: :return_failed
   def trap
     @hash_urls = Set.new
 
@@ -28,8 +28,9 @@ class TrapUrlsController < ApplicationController
   def show
     @url_requests_attr = Set.new
     url_requests = Request.where(url: url_params[:url])
+    logger.info (:tuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu)
     url_requests.each do |request|
-      @url_requests_attr.add(request.attributes)
+      @url_requests_attr.add(request.url)
     end
   end
 
