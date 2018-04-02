@@ -16,16 +16,13 @@ App.messages = App.cable.subscriptions.create('RequestsChannel', {
             "<p class=\"list-group-item-text trancate-long-string\">" + request_data.request.headers + "</p>"+
 
             "<h4 class=\"list-group-item-heading\">Cookies</h4>"+
-            "<p class=\"list-group-item-text trancate-long-string\">"+ request_data.request.cookies +"</p>"+
+            "<p class=\"list-group-item-text trancate-long-string\">"+ JSON.stringify(request_data.request.cookies) +"</p>"+
 
             "<h4 class=\"list-group-item-heading\">Query-params</h4>"+
-            "<p class=\"list-group-item-text trancate-long-string\">" + request_data.request.query_params + "</p>"+
+            "<p class=\"list-group-item-text trancate-long-string\">" + JSON.stringify(request_data.request.query_params) + "</p>"+
 
             "<h4 class=\"list-group-item-heading\">Query-string</h4>" +
             "<p class=\"list-group-item-text trancate-long-string\">" + request_data.request.query_string +"</p>"+
-
-            "<h4 class=\"list-group-item-heading\">Query-params</h4>"+
-            "<p class=\"list-group-item-text trancate-long-string\">" + request_data.request.query_params +"</p>"+
 
             "<h4 class=\"list-group-item-heading\">Scheme</h4>"+
             "<p class=\"list-group-item-text trancate-long-string\">" + request_data.request.scheme +"</p>"+
