@@ -51,9 +51,9 @@ class TrapUrlsController < ApplicationController
         params: params,
         headers: request.headers,
         cookies: request.cookies,
-        'query-params' => request.query_parameters,
-        'query-string' => request.query_string,
-        'request-method' => request.request_method
+        query_params: request.query_parameters,
+        query_string: request.query_string,
+        request_method: request.request_method
       }
     )
   end
