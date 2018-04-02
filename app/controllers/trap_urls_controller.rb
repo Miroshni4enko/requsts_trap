@@ -15,7 +15,7 @@ class TrapUrlsController < ApplicationController
     if trap_request.save
       TrapUrl.update(@url.url, amount: @url.amount + 1)
       ActionCable.server.broadcast 'requests',
-                                   url: trap_request.url
+                                   url: trap_request.request_data
       head :ok
     end
 
