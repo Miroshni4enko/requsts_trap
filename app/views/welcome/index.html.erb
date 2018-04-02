@@ -1,3 +1,51 @@
-<h1>Welcome!</h1>
-<h1>REQUESTS-TRAP</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="/">Requests Trap</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/requests/all">Trapped Urls</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container pt-4">
+  <div class="jumbotron">
+    <h1>Requests Trap</h1>
+    <p>A tool for capture and display HTTP requests.
+      This simple tool is useful during the development of apps that
+      integrate with external services, such as http clients, webhooks,
+      etc. The Requests Trap app ('Req App') provides these services with
+      an endpoint to which they can send requests and notifications
+    </p>
+    <p>
+      The app has three main routes:
+    </p>
+    <dl>
+      <dt>/requests/all</dt>
+      <dd>- display all trapped endpoints</dd>
+      <dt>/:trap_id</dt>
+      <dd>- send requests to be captured here</dd>
+      <dt>/:trap_id/requests</dt>
+      <dd>- display requests for particular endpoint</dd>
+    </dl>
+  </div>
+</div>
+
+</body>
+</html>
 

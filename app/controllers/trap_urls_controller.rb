@@ -6,16 +6,17 @@ class TrapUrlsController < ApplicationController
 
     @url = if TrapUrl.exists?(url_params[:url])
       TrapUrl.find(url_params[:url])
-    else
-      TrapUrl.create(url_params)
+           else
+      TrapUrl.create({ url: url_params[:url],  amount: 0 })
            end
 
     trap_request = @url.requests.new(request_data: request_as_json)
 
     if trap_request.save
-    ActionCable.server.broadcast 'requests',
-                                  url: trap_request.url
-    head :ok
+      TrapUrl.update(@url.url, amount: @url.amount + 1)
+      ActionCable.server.broadcast 'requests',
+                                   url: trap_request.url
+      head :ok
     end
 
     @hash_urls.add @url.url
@@ -26,10 +27,11 @@ class TrapUrlsController < ApplicationController
   end
 
   def show
-    @url_requests_attr = Set.new
-    url_requests = Request.where(url: url_params[:url])
+    @url_requests = Set.new
+    @url = url_params[:url]
+    url_requests = Request.where(url:@url)
     url_requests.each do |request|
-      @url_requests_attr.add(request.attributes)
+      @url_requests.add(JSON.parse(request.request_data))
     end
   end
 
@@ -43,6 +45,7 @@ class TrapUrlsController < ApplicationController
   def request_as_json
     JSON.generate(
       request: {
+        creation_date: Time.new,
         remote_ip: request.remote_ip,
         scheme: request.scheme,
         params: params,
@@ -57,7 +60,7 @@ class TrapUrlsController < ApplicationController
 
   def return_failed(exception)
     logger.error exception.message
-    render json: {success: false}, status: 500
+    render json: { success: false }, status: 500
   end
 
 end

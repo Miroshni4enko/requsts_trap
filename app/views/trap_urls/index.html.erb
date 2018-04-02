@@ -1,13 +1,33 @@
-<h1>Urls</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<table>
-  <tr>
-    <th>Url</th>
-  </tr>
-
-  <% @trap_urls.each do |trap_url| %>
-    <tr>
-      <td><%= trap_url.url %></td>
-    </tr>
-  <% end %>
-</table>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Requests Trap</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#/requests/all">Trapped Urls</a>
+    </li>
+  </ul>
+</nav>
+<div class="container pt-4">
+  <h2>Trapped Urls</h2>
+  <ul class="list-group">
+      <% @trap_urls.each do |trap_url| %>
+         <li  class="list-group-item"> <a href="/<%=trap_url.url%>/requests"><%= trap_url.url %></a><span class="badge"><%= trap_url.amount %></span></li>
+      <% end %>
+  </ul>
+</div>
+</body>
+</html>

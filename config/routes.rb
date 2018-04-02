@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #root 'welcome#index'
+  root 'welcome#index'
 
   put '/:url', to: 'trap_urls#trap'
   delete '/:url', to: 'trap_urls#trap'
