@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  put '/:url', to: 'trap_urls#trap'
-  delete '/:url', to: 'trap_urls#trap'
-  post '/:url', to: 'trap_urls#trap'
-  get '/:url', to: 'trap_urls#trap'
-  patch '/:url', to: 'trap_urls#trap'
+  match '/:url(/*other)', to: 'trap_urls#trap', via: [:all]
   get '/requests/all', to: 'trap_urls#index'
   get '/:url/requests', to: 'trap_urls#show'
 
