@@ -7,6 +7,8 @@ App.messages = App.cable.subscriptions.create('RequestsChannel', {
     },
 
     renderMessage: function(data) {
-        return "<tr> <td>" + data.url  + "</td> </tr>";;
+        return "<a class=\"list-group-item\">" +
+                  "<h4 class=\"list-group-item-heading\">URL</h4>" +
+                  "<p class=\"list-group-item-text\">"+ data.url +"</p> </a>";
     }
 });

@@ -1,7 +1,8 @@
-<%= csrf_meta_tags %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +26,7 @@
 
 <div class="container pt-4">
   <h2>url - <%= @url %>  </h2>
-  <div class="list-group">
+  <div class="list-group" id="requests">
     <% @url_requests.each do |url_request| %>
       <a class="list-group-item">
         <h4 class="list-group-item-heading">Creation Date</h4>
