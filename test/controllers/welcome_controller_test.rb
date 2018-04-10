@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class WelcomeControllerTest < ActionDispatch::IntegrationTest
+=begin
   test "should get index" do
     get welcome_index_url
     assert_response :success
   end
+=end
 
 end

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  url: MyString
-  request_data: 
+  url: vk.com
+  request_data: "{\"request\":{\"creation_date\":\"2020-08-02 13:09:24 +0000\",\"remote_ip\":\"217.20.173.242\",\"scheme\":\"https\",\"params\":\"{\\\"controller\\\"=>\\\"trap_urls\\\", \\\"action\\\"=>\\\"trap\\\", \\\"url\\\"=>\\\"test_json_cool\\\"}\",\"headers\":\"#<ActionDispatch::Http::Headers:0x00000004271178>\",\"cookies\":{\"gsScrollPos-1082\":\"0\",\"gsScrollPos-1066\":\"0\",\"gsScrollPos-1402\":\"0\",\"_requests_trap_session\":\"REdweWt3cVJuNCtPSzQxU1RFNUNuK20ycnFWbk43QjFYK3JYMDRFZDZ1aTZWSHE0d1hZejJuZGowS3NSVXFSSnZuanZMMVFsMldyb3B2V0tHR2lLK0pQV2t0R1AwNG1vYVFmZ25sZ1B5a0p3REZ5bWg0ZWRveHRaRXBQdlZ3cVJSNWdKTFVwbng3Y2pCQTA1dldzVzNnPT0tLTQ4V0tURWFEdW9XaXQ0dGwrMkoxUWc9PQ==--5568b3f7815f98035c622fe8ba9f0ce487c3d408\"},\"query_params\":{},\"query_string\":\"\",\"request_method\":\"GET\"}}"
 
 two:
-  url: MyString
-  request_data: 
+  url: yandex.com
+  request_data: "{\"request\":{\"creation_date\":\"2018-04-02 13:09:24 +0000\",\"remote_ip\":\"217.20.173.242\",\"scheme\":\"https\",\"params\":\"{\\\"controller\\\"=>\\\"trap_urls\\\", \\\"action\\\"=>\\\"trap\\\", \\\"url\\\"=>\\\"test_json_cool\\\"}\",\"headers\":\"#<ActionDispatch::Http::Headers:0x00000004271178>\",\"cookies\":{\"gsScrollPos-1082\":\"0\",\"gsScrollPos-1066\":\"0\",\"gsScrollPos-1402\":\"0\",\"_requests_trap_session\":\"REdweWt3cVJuNCtPSzQxU1RFNUNuK20ycnFWbk43QjFYK3JYMDRFZDZ1aTZWSHE0d1hZejJuZGowS3NSVXFSSnZuanZMMVFsMldyb3B2V0tHR2lLK0pQV2t0R1AwNG1vYVFmZ25sZ1B5a0p3REZ5bWg0ZWRveHRaRXBQdlZ3cVJSNWdKTFVwbng3Y2pCQTA1dldzVzNnPT0tLTQ4V0tURWFEdW9XaXQ0dGwrMkoxUWc9PQ==--5568b3f7815f98035c622fe8ba9f0ce487c3d408\"},\"query_params\":{},\"query_string\":\"\",\"request_method\":\"GET\"}}"

@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: MyString
+  url: vk
+  amount: 1
 
 two:
-  id: MyString
+  url: yandex
+  amount: 1
