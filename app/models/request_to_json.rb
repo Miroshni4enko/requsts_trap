@@ -2,7 +2,7 @@ class RequestToJSON
   def self.to_json(request)
     JSON.generate(
       request: {
-        creation_date: Time.new,
+        creation_date: Time.zone.now,
         remote_ip: request.remote_ip,
         scheme: request.scheme,
         headers: request.headers,

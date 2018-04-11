@@ -11,7 +11,6 @@ class TrapUrlsController < ApplicationController
         @url.increment!(:amount)
         ActionCable.server.broadcast 'requests',
                                      url: trap_request.request_data
-        head :ok
       end
     end
   end
